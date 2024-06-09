@@ -1,0 +1,572 @@
+:root {
+--color1:#F7F7F7; /*bg*/
+--color2:#E1E2E3; /*outline*/
+--color3:#B2CBE1;  /*accents*/
+--color4:#112141; /*button?*/
+--color5:#171718; /*text*/
+    
+ }
+ @font-face {
+    font-family: 'Aquire';
+    src: url('assets/fonts/Aquire.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+ body {
+   overflow-x: hidden;
+
+padding:0;            
+position: relative;
+    }
+
+ * {
+    font-family: "Poppins";
+
+height:fit-content;
+        z-index: 1;
+        line-height: 1.5;
+        margin:0;
+      
+  box-sizing: border-box;
+ 
+}
+
+
+
+section {
+ position: relative;
+  padding:40px;
+min-width: 100vw;
+background:var(--color5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height:100vh;
+max-width: 100vw;
+flex-direction: column;
+gap:20px;
+max-width: 100vw;
+min-width: 100vw;
+width:100vw;
+}
+#section-1 {
+ justify-content: flex-end;
+   }
+nav{    
+   position: fixed;
+background:rgba(255,255,255,.0001);
+   overflow:hidden;
+   backdrop-filter: blur(1px);
+   inset:0;
+   margin-bottom:auto;
+   z-index:9999;
+   display: flex;
+   align-items: center;
+ justify-content: space-between;
+ padding:30px 40px;
+ height:fit-content;
+}
+.nav-left {    
+ font-weight:bold;
+ display: flex;
+ align-items: center;
+ gap:20px;
+          }
+.nav-left img {    
+  height:60px;
+            }
+.nav-right {    
+   display: flex;
+   gap:20px;
+  align-items: center;
+          }
+.nav-right a  {    
+  position: relative;
+   text-decoration: none;
+   color:var(--color1);
+  font-family: "Aquire";
+   height:fit-content;
+   font-size:12px;
+          }
+.nav-right a:hover   {    
+color:var(--color2);
+          }
+
+.nav-right a:before {    
+   background:var(--color2);
+   content:"";
+   position: absolute;
+   inset:0;
+   border-radius:50px;
+   margin-top:30px;
+   height:5px;
+   width:0;
+   top:25px;
+  margin: auto;
+              }
+.nav-right a:hover::before {    
+  width: 100%;
+  transition: .3s;
+              }
+
+              #section-1 {
+               max-height:100vh;
+               min-height:100vh;
+               position:relative;
+                 }
+#section-1:before 
+{
+content:"";
+position: absolute;
+inset:0;
+margin:auto;
+background:linear-gradient(to right, black,rgba(0, 0, 0, 0.77),black);
+  }
+  
+.landing-vid {
+   max-height:100vh !important;
+   min-height:100vh !important;
+   overflow:hidden;
+   min-width:100vw;
+max-height: 100vw;
+scale:130%;
+
+ z-index: -2;
+position: absolute;
+   inset:0;
+
+ border:2px blue solid;
+}
+
+.intro-cont {
+    width:30vw;
+  height:fit-content;
+display: flex;
+flex-direction: column;
+gap:10px;
+   }
+h1 {
+   font-family: "Aquire";
+    font-size: 60px;
+ 
+    color:var(--color1);
+  }
+  p a   {
+text-decoration: none;
+color: var(--color3);
+       }
+p {
+font-size: 12px;
+     color:var(--color1);
+   }
+.aquila-button {
+    width: fit-content;
+    cursor:pointer;
+   text-decoration: none;
+   color:var(--color1);
+   padding:10px 18px;
+   background:none;
+   border-radius: 5px;
+   font-size: 12px;
+   border:1px var(--color2) solid;
+  }
+.aquila-button:hover {
+   scale:105%;
+background:var(--color4);
+color:var(--color1);
+transition: .2s;
+border:1px var(--color5) solid;
+
+  } 
+  
+  .slider{
+   width: 100%;
+   height: var(--height);
+   overflow: hidden;
+   mask-image: linear-gradient(
+       to right,
+       transparent,
+       #000 10% 90%,
+       transparent
+   );
+}
+.slider .list{
+   display: flex;
+
+   width: 100%;
+   min-width: calc(var(--width) * var(--quantity));
+   position: relative;
+   
+}
+.slider .list .item{
+   width: var(--width);
+   height: var(--height);
+   position: absolute;
+   left: 100%;
+   
+   animation: autoRun 30s linear infinite;
+   transition: filter 0.5s;
+   animation-delay: calc( (12s / var(--quantity)) * (var(--position) - 1) )!important;
+}
+.slider .list .item img{
+   width: fit-content;
+  
+   height:100%;
+}
+@keyframes autoRun{
+   from{
+       left: 100%;
+   }to{
+       left: calc(var(--width) * -1);
+   }
+}
+
+.slider .item:hover{
+   filter: grayscale(0);
+}
+* {
+
+}
+swiper-container {
+   width: 100%;
+   height: 150px;
+mask-image:linear-gradient(to right, transparent,rgb(0, 0, 0), transparent);
+   position: relative;
+ }
+ .swiper {
+  
+   width: 100%;
+   height: 300px;
+   z-index: 3;
+ }
+ swiper-slide {
+   text-align: center;
+   font-size: 18px;
+ width:fit-content;
+ height:100%;
+   display: flex;
+   gap:20px;
+   justify-content: center;
+   align-items: center;
+ }
+.swiper-wrapper  {
+  gap:20px !important;
+}
+ swiper-slide img {
+ position: relative;
+   width: 250px;
+   height: 140px;
+   object-fit: cover;
+   background-size: cover;
+}
+.swiper-pagination, .swiper-pagination-bullet {
+display: none !important;
+ } 
+ .swiper-pagination-clickable .swiper-pagination-bullet{
+   display: none !important;
+    }
+
+    
+   /*---------------------------------------------SECTION 2 -------------------------------- */
+
+#section-2 {
+    min-height:fit-content !important;
+   background:var(--color4);
+   color:var(--color1);
+    margin:auto;
+    z-index:7;
+    padding: 20px 40px;
+    font-size: 12px;
+    overflow:none !important;
+    position: relative;
+}
+
+ /*---------------------------------------------SECTION 3 -------------------------------- */
+
+ #section-3 {
+   position: relative;
+   z-index: 7;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-evenly;
+ 
+}
+
+.small-text {
+   color:var(--color2);
+   font-size: 8px;
+   text-transform:uppercase;
+   position: absolute;
+   inset:0;
+   left:auto;
+   opacity: .5;
+   top:5vh;
+   right:5vw;
+   letter-spacing: 5px;
+   filter:blur(2px);
+
+          }
+          .small-text2 {
+            color:var(--color2);
+            font-size: 8px;
+            text-transform:uppercase;
+            position: absolute;
+            inset:0;
+            right:auto;
+            top:auto;
+            opacity: .5;
+            bottom:5vh;
+            left:40px;
+            letter-spacing: 5px;
+         filter:blur(1px);
+                   }
+      .small-text .item, .small-text2 .item{
+   margin-bottom:10px;
+          }
+          
+.ranking-preview-cont {
+ min-width:30vw;
+ max-width:30vw;
+   display: flex;
+   flex-direction: column;
+   gap:10px;
+}
+.table-cont {
+   width:100%;
+   position: relative;
+   border:2px red solid;
+}
+*  {
+
+}
+.responsive-table {
+   width:50%;
+   li {
+     border-radius: 3px;
+     padding: 10px 20px;
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 15px;
+    position: relative;
+    align-items: center;
+     gap:30px;
+   }
+
+   .profile {
+    height:40px;
+    width:45px;
+    }
+   .table-header {
+     background:linear-gradient(to right, var(--color1), var(--color1), var(--color2));
+     font-size: 14px;
+     text-transform: uppercase;
+     letter-spacing: 0.03em;
+   }
+   .table-row {
+     background:linear-gradient(to right, var(--color4), var(--color4), var(--color5));
+     border:var(--color4) 1px solid;
+     color:var(--color1);
+     box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+   }
+   .col-1 {
+     flex-basis: 20%;
+   }
+   .col-2 {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+     flex-basis: 50%;
+     gap:20px;
+   }
+   .col-3 {
+     flex-basis: 30%;
+   }
+ 
+   @media all and (max-width: 767px) {
+     .table-header {
+       display: none;
+     }
+  
+     li {
+       display: block;
+     }
+     .col {
+       
+       flex-basis: 100%;
+       
+     }
+     .col {
+       display: flex;
+       padding: 10px 0;
+       &:before {
+         color: #6C7A89;
+         padding-right: 10px;
+         content: attr(data-label);
+         flex-basis: 50%;
+         text-align: right;
+       }
+     }
+   }
+ }
+
+ /*--------------------------------------------------------SECTION-4--------------------------------------------------------*/
+
+ #section-4 {
+  align-items: center;
+
+}
+#section-4:after {
+  background:rgba(0, 0, 0, 0.907);
+  content:"";
+  position: absolute;
+  inset: 0;
+  margin:auto;
+  
+}
+#section-4:before {
+  background:url("assets/img/mot.png");
+  content:"";
+  position: absolute;
+  inset: 0;
+  margin:auto;
+  mask-image:linear-gradient(to right, transparent,rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), transparent);
+}
+
+.socials-cont  {
+  height:fit-content;
+
+  display: flex;
+  inset:0;
+  left:auto;
+  right:auto;
+  top:auto;
+  bottom:10vh;
+  gap:10px;
+     }
+.socials {position: relative;
+height:fit-content;
+animation: landingFadeIn 3s linear;
+  }
+.socials:hover {scale:105%;
+  transition:.2s;
+    }
+  .socials img  {
+      height:50px;
+      position: relative;
+     
+         }
+         .join-cont * {
+          text-align: center;
+         
+             }
+.join-cont  { 
+width:70vw;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+     }
+
+
+
+/*----------------FOOTER------------------------------------------------*/
+footer  {
+  z-index:99999 !important;
+  background:var(--color4);
+   height:400px;
+    position: relative;
+    overflow:hidden;
+    padding:40px 40px;
+    font-family: "Aquire";
+   }
+
+
+
+footer:before  {
+  background-size:cover;
+
+background:url("assets/img/fabric.png");
+scale:300%;
+  position: absolute;
+  content: "";
+ inset:0;
+
+opacity: .1;
+filter: blur(2px);
+ mix-blend-mode: difference;
+
+}
+.top-footer {
+  font-size: 14px !important;
+    color:rgb(232, 232, 232) !important;
+    font-weight: bold !important;
+    margin-bottom:10px;
+    
+      }
+.button-nav  {
+font-size: 12px;
+text-decoration: none;
+font-family: "Aquire";
+}
+.button-nav:hover  {
+color:var(--color2);
+  }
+.footer-container {
+  height:90%;
+  width:100%;
+  border-top:var(--color2) solid 1px;
+  padding: 40px 0px;
+  color:rgb(232, 232, 232);
+  display:flex;
+  justify-content:space-between;
+
+}
+.footer-right span {
+
+  color:var(--color2);
+  }
+.footer-container a {
+color:var(--color2);
+}
+
+.footer-container div {
+  display:flex;
+  justify-content: flex-start;
+}
+
+.footer-nav  div{
+  display: flex;
+ flex-direction: column;
+}
+
+.footer-nav {
+  gap:100px;
+ 
+  display: flex;
+}
+
+.footer-right {
+  
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 14px;
+}
+.copyright {
+  text-align: center;
+ font-size: 12px;
+ color:rgb(232, 232, 232);
+}
+
+h4 {
+  text-align: right;
+  font-family: "Aquire";
+  font-size: 16px;
+}
+.logo-footer {
+  height:50px;
+  width:50px;
+}
+
